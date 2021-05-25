@@ -6,7 +6,7 @@ while loop:
     print("1- Switches.")
     print("2- Routers.")
     print("3- Firewall.")
-    print("4- Ver todos los equipos.")
+    print("4- Salir")
     opt = int(input())
     name = ""
     equipment={}
@@ -25,15 +25,21 @@ while loop:
         name=input()
         equipment["Firewall"]=name
         equipments.append(equipment)
+    elif opt == 4:
+        loop=False
     print("SWITCHS EN EL SISTEMA")
-    for i in equipments:
-        print(i["Switch"])
+    if "Switch" in equipments:
+        print("--------------switch exits----------------")
+        for i in equipments:
+            print(i["Switch"])
     print("ROUTERS EN EL SISTEMA")
-    for i in equipments:
-        print(i["Router"])
+    if "Router" in equipments:
+        print("--------------router exits----------------")
+        for i in equipments:
+            print(i["Router"])
     print("Firewalls EN EL SISTEMA")
-    for i in equipments:
-        print(i["Firewall"])
-
-        
-    
+    if "Firewall" in equipments:
+        print("--------------Firewall exist----------------")
+        for i in equipments:
+            print(i["Firewall"])
+    print(equipments)
