@@ -1,12 +1,13 @@
 loop=True
-equipment={"Switch":[], "Router":[], "Firewall":[]}
+equipment={"Switch":[], "Router":[], "Firewall":[],"APs":[]}
 
 while loop:
     print("Bienvenido, que desea ingresar?:")
     print("1- Switches.")
     print("2- Routers.")
     print("3- Firewall.")
-    print("4- Salir")
+    print("4- Aps.")
+    print("5- Salir")
     opt = int(input())
     name = ""
     
@@ -23,6 +24,10 @@ while loop:
         name=input()
         equipment["Firewall"].append(name)
     elif opt == 4:
+        print("Ingrese el nombre del AP")
+        name=input()
+        equipment["APs"].append(name)
+    elif opt == 5:
         loop=False
     print("***************************************************************************")
     print("SWITCHS EN EL SISTEMA")
@@ -33,5 +38,8 @@ while loop:
        print(i)
     print("Firewalls EN EL SISTEMA")
     for i in equipment["Firewall"]:
+        print(i)
+    print("Aps EN EL SISTEMA")
+    for i in equipment["APs"]:
         print(i)
     print("***************************************************************************")
